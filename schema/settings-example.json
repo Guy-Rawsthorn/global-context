@@ -1,0 +1,13 @@
+{
+    "jupyter.lab.setting-icon": "ui-components:settings",
+    "jupyter.lab.setting-schema-version": 1,
+    "type": "object",
+    "properties": {
+        "context": {
+            "type": "object",
+            "default": {},
+            "title": "Stored Context Data",
+            "description": "A list to store JSON objects persistently in JupyterLab."
+        }
+    }
+}
