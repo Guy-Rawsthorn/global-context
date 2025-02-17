@@ -54,6 +54,7 @@
     },
     "dependencies": {
         "@jupyterlab/application": "^4.0.0",
+        "@jupyterlab/notebook": "^4.3.5",
         "@jupyterlab/settingregistry": "^4.3.5"
     },
     "devDependencies": {

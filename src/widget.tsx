@@ -1,15 +1,13 @@
-// import { ReactWidget } from '@jupyterlab/ui-components';
 import { CommandRegistry } from '@lumino/commands';
 import React, { useState } from 'react';
-
-// import { requestAPI } from './handler'
 
 interface JsonCodeBlockProps {
   commands: CommandRegistry;
   saveCommandId: string
 }
+
 /**
- * React component for a counter.
+ * React component to set global context into ISettingsRegistry.
  *
  * @returns The React component
  */
@@ -26,7 +24,6 @@ const JsonCodeBlock: React.FC<JsonCodeBlockProps> = ({commands, saveCommandId}) 
     setJsonInput(newValue);
 
     try {
-      // Attempt to parse JSON
       JSON.parse(newValue);
       setError(null); // Clear error if valid JSON
     } catch (e) {
@@ -38,7 +35,7 @@ const JsonCodeBlock: React.FC<JsonCodeBlockProps> = ({commands, saveCommandId}) 
     try {
       const parsedJson = JSON.parse(jsonInput); // Ensure JSON is valid
       console.log('Saving JSON:', parsedJson);
-      commands.execute(saveCommandId, { data: parsedJson }); // ✅ Call Jupyter command
+      commands.execute(saveCommandId, { data: parsedJson });
       setIsError(false)
       setFeedbackMessage("✅ Successfully saved data!")
     } catch (e) {
@@ -71,23 +68,6 @@ const JsonCodeBlock: React.FC<JsonCodeBlockProps> = ({commands, saveCommandId}) 
     </div>
   );
 };
-
-// /**
-//  * A Counter Lumino Widget that wraps a CounterComponent.
-//  */
-// export class JsonWidget extends ReactWidget {
-//   /**
-//    * Constructs a new CounterWidget.
-//    */
-//   constructor() {
-//     super();
-//     this.addClass('jp-react-widget');
-//   }
-
-//   render(): JSX.Element {
-//     return <JsonCodeBlock />;
-//   }
-// }
 
 export default JsonCodeBlock
 

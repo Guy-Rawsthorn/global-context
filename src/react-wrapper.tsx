@@ -1,7 +1,6 @@
 import { ReactWidget } from '@jupyterlab/ui-components';
 import React from 'react';
-// import { createRoot } from 'react-dom/client';
-import JsonCodeBlock from './widget'; // Import React component
+import JsonCodeBlock from './widget';
 import { CommandRegistry } from '@lumino/commands';
 
 /**
